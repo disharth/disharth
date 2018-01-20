@@ -1,8 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Macondo|Roboto+Condensed');
 body {
-  background-color: rgba(F,F,200,.2);
+  background-color: #272b23;
+  color: #14fe17;
   margin: auto;
 }
+body::after {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: repeating-linear-gradient(0deg , rgba(0,0,0,.4),rgba(0,0,0,.4) 1px,transparent 2px);
+  opacity: .3;
+  z-index: 1000000;
+  pointer-events: none;
+}
+ul > li > a {
+  color: #14fe17 !important;
+}
+.navbar{
+  background-color: #272b23 !important;
+  border-bottom: 2px solid;
+  margin: 0px 10px;
+}
+
+.navbar::before , .navbar::after {
+  height: 7px;
+      width: 4px;
+      content: "";
+      position: absolute;
+      z-index: 5000;
+      display: block;
+      bottom: -7px;
+      background-color: #14fe17;
+}
+.navbar::before{
+  left: 0px;
+}
+.navbar::after{
+  right: 0px;
+}
+
+.navbar.footer::before , .navbar.footer::after {
+  height: 7px;
+      width: 4px;
+      content: "";
+      position: absolute;
+      z-index: 5000;
+      display: block;
+      bottom: 0px;
+      background-color: #14fe17;
+}
+.navbar.footer::before{
+  left: 0px;
+}
+.navbar.footer::after{
+  right: 0px;
+}
+
 
 header {
   margin: 0px;
@@ -26,13 +82,27 @@ section {
 }
 
 article {
-  max-width: 49%;
-  display: inline-block;
+  width: 500px;
+  margin: auto !important;
   margin: 10px;
+}
+.footer {
+  position: relative;
+  top: 0px;
+  margin: auto;
+  margin: 0px 10px;
+
+}
+a {
+  margin: 3px;
 }
 div h3 {
     font-family: "Roboto Condensed";
     letter-spacing: 2px;
+}
+b{
+  text-shadow: 1px 0px #aaa;
+
 }
 
 p {
@@ -69,9 +139,65 @@ div {
 }
 
 #dish-color {
-  color: #F00;
+  font-family: "Macondo";
+  font-size: 40px;
+  font-weight: 400;
+  color: #e89f9d;
 }
 
 #arth-color {
-  color: #0F0;
+  font-family: "Macondo";
+  font-size: 40px;
+  font-weight: 400;
+  color:#7ea6ce;
+}
+#purpose-color {
+  font-family: "Macondo";
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 10px;
+  color: #14fe17 !important;
+}
+.main-menu {
+  list-style: none;
+  float: right;
+  display: inline-block;
+  font-size: 14px;
+
+}
+.about-menu {
+
+  margin-right: 180px;
+  padding-bottom: 40px;
+}
+.about-submenu{
+
+}
+.submenu {
+  list-style: none;
+  padding: 0px;
+  border: 1px solid #ddd;
+  background: #fff;
+  margin-top: 30px;
+  margin-right: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+  width: 250px;
+  position: absolute;
+  right: 10px;
+  display: none;
+}
+.submenu.active{
+  display: block;
+}
+.submenu a {
+    text-decoration: none;
+    padding: 10px 10px;
+    color: #333;
+    display: block;
+    text-shadow: none;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+.submenu a:hover {
+  background: #ddd;
 }
